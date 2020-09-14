@@ -14,7 +14,7 @@ public class Factorial_Q1 {
             System.out.print("문자 3개 이상의 문자열을 입력하세요: ");
             String str = sc.nextLine();
 
-            if (str.length() >= 3) {
+            if (str.length() >= 3) { // 문자 비교를 위해 필요한 최소한의 문자 개수(3개)
                 int front = 0;
                 int behind = str.length() - 1;
 
