@@ -1,6 +1,6 @@
 package DataStructure;/*
  문자열을 전달받아 회문(palindrome) 인지 체크하는 함수 작성
- 형식 : boolean isPalindrome(String str) {...}
+ 형식 : static boolean isPalindrome(String str) {...}
 
  예) isPalindrome("eye") == true, isPalindrome("noon") == true
  */
@@ -9,26 +9,34 @@ import java.util.*;
 
 public class Factorial_Q1 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("문자열을 입력하시오 : ");
-        String str = sc.nextLine();
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("문자 3개 이상의 문자열을 입력하세요: ");
+            String str = sc.nextLine();
 
-        Factorial_Q1 f = new Factorial_Q1();
-        System.out.println(f.isPalindrome(str));
+            if (str.length() >= 3) {
+                int front = 0;
+                int behind = str.length() - 1;
+
+                System.out.println(isPalindrome(str, front, behind));
+                break; // 1회성 확인 프로그램. 일정 횟수 or 사용자가 원하는 횟수 만큼 반복하도록 수정 가능
+
+            } else {
+                System.out.println("문자열이 너무 짧습니다. 다시 입력하세요.\n");
+            }
+        }
     }
 
-    public boolean isPalindrome(String str) {
-        int front = 0;
-        int behind = str.length() - 1;
-
-        while (front < behind) { // 재귀함수 내 반복문 사용은 비효율적 -> 재귀함수 자체가 반복을 위한 것이기 때문
+    static String isPalindrome(String str, int front, int behind) {
+        if (front < behind) {
             if (str.charAt(front) != str.charAt(behind)) {
-                return false;
+                return "Not Palindrome";
             } else {
                 front += 1;
                 behind -= 1;
+                isPalindrome(str, front, behind);
             }
         }
-        return true;
+        return "Palindrome";
     }
 }
