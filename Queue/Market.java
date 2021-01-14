@@ -112,7 +112,7 @@ public class Market {
                 case 1:
                     System.out.println("\n[새 고객 입력]");
                     System.out.print("고객 명: ");
-                    input.nextLine(); //개행 문자(엔터) 제거 용
+                    input.nextLine(); //개행 문자 (엔터) 제거 용
                     String customer = input.nextLine();
 
                     System.out.print("도착 시간: ");
