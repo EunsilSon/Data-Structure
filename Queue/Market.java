@@ -1,4 +1,12 @@
-package Queue;
+/*
+* 대기 큐와 서버는 각 1개이며, 고객 도착과 서비스는 독립 수행된다.
+* 고객 도착시 대기 큐에 입력하고, 도착 순서대로 손님에게 서비스를 수행한다.
+* 손님 별 서비스 시간과 평균 대기 시간을 출력하시오.
+*
+* 입력: 고객, 도착 시간, 서비스 소요 시간
+* 출력: 1) 고객 별 도착 시간, 서비스 시작 시간, 서비스 완료 시간
+        2) 평균 대기 시간
+*/
 
 import java.util.*;
 
@@ -75,7 +83,7 @@ class CustomerQueue {
             System.out.println(q.remove());
 
         }
-        System.out.println("[평균 대기시간: " + averageWaiting(waiting) + "시간]");
+        System.out.println("[평균 대기 시간: " + averageWaiting(waiting) + "시간]");
     }
 
     // 평균 대기 시간
