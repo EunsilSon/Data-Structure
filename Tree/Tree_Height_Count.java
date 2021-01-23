@@ -1,5 +1,3 @@
-package Tree;
-
 class Node {
     private String root;
     private Node left, right;
