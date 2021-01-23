@@ -1,6 +1,3 @@
-/*
-package Tree;
-
 class Node {
     private String root;
     private Node left, right;
@@ -59,4 +56,3 @@ public class DirectorySize {
         System.out.print("디렉토리 총 용량: " + dir.getDirSize());
     }
 }
-*/
